@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photo hover image</title>
+    <link rel="stylesheet" href="./output.css" />
+  </head>
+  <style>
+    .clip{
+        position: absolute;
+        top:0px;
+        left:0px;
+        width: 100%;
+        height:100%;
+        transition-duration: 1000ms;
+    }
+    .clip1{
+        background-image: url("./coral.jpg");
+        background-size: cover;
+        background-position: center;
+        clip-path: polygon(0 0,46% 0,39% 100%,0 100% );
+    }
+    .clip2{
+        background-image: url("./pig\ and\ pigeon.jpg");
+        background-size: cover;
+        background-position: center;
+        clip-path: polygon(19% 0,87% 0,64% 100%,33% 100% );
+    }
+    .clip3{
+        background-image: url("./stone.jpg");
+        background-size: cover;
+        background-position: center;
+        clip-path: polygon(82% 0,100% 0,100% 100%,63% 100% )
+    }
+    .group:hover .clip{
+        clip-path: polygon(100% 0,100% 0,100% 100%,100% 100% )
+    }
+    .group .clip:hover{
+        clip-path: polygon(0 0,100% 0,100% 100%,0 100% )
+    }
+  </style>
+  <body>
+    <section class="flex flex-col min-h-screen justify-center items-center">
+      <div class="w-[800px] group h-[500px] mx-auto overflow-hidden relative border">
+        <div class="clip  clip1"></div>
+        <div class="clip  clip2"></div>
+        <div class="clip  clip3"></div>
+      </div>
+    </section>
+  </body>
+</html>
